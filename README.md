@@ -15,7 +15,7 @@
 #    Cloud Run:run.googleapis.com
 #    Artifact Registry:artifactregistry.googleapis.com
 #
-# 2. Create and configure Workload Identity Federation for GitHub (https://github.com/google-github-actions/auth#setting-up-workload-identity-federation)
+# 2. Generate the JSON key for GCP Service account and store it in the Github Secrets.
 #
 # 3. Ensure the required IAM permissions are granted
 #
