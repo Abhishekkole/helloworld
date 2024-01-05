@@ -12,11 +12,11 @@ on:
 
  #Environment Variables declaration   
 env:
-  PROJECT_ID: YOUR_PROJECT_ID        #update Google Cloud project id
-  GAR_LOCATION: YOUR_GAR_LOCATION    #update Artifact Registry location
-  REPOSITORY: YOUR_REPOSITORY_NAME   #update Artifact Registry repository name
-  SERVICE: YOUR_SERVICE_NAME         #update Cloud Run service name
-  REGION: YOUR_SERVICE_REGION        # TODO: update Cloud Run service region
+  PROJECT_ID: driven-park-410307        #update Google Cloud project id
+  GAR_LOCATION: us-central1    #update Artifact Registry location
+  REPOSITORY: hello-world   #update Artifact Registry repository name
+  SERVICE: hello         #update Cloud Run service name
+  REGION: us-central1        # TODO: update Cloud Run service region
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
