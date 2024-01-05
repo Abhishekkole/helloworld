@@ -60,8 +60,8 @@ jobs:
         uses: 'google-github-actions/auth@v2'
         with:
           token_format: 'access_token'
-          workload_identity_provider: '${{ secrets.WIF_PROVIDER }}' # e.g. - projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider
-          service_account: '${{ secrets.WIF_SERVICE_ACCOUNT }}' # Service Account Email
+          workload_identity_provider: 'projects/382301445459/locations/global/workloadIdentityPools/github/providers/helloworld' # e.g. - projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider
+          service_account: 'github-actions@driven-park-410307.iam.gserviceaccount.com' # Service Account Email
           
       #BEGIN - Docker authntication and build
       - name: Docker Auth
