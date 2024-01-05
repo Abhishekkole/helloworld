@@ -51,7 +51,7 @@ on:
 env:
   PROJECT_ID: driven-park-410307        #update Google Cloud project id
   GAR_LOCATION: us-central1    #update Artifact Registry location
-  REPOSITORY: hello-world   #update Artifact Registry repository name
+  REPOSITORY: hello   #update Artifact Registry repository name
   SERVICE: hello         #update Cloud Run service name
   REGION: us-central1
 jobs:
