@@ -22,28 +22,8 @@ env:
 jobs:
   # This workflow contains a single job called "build"
   #scan's code for code analysis
-  njsscan:
-    permissions:
-      contents: read # for actions/checkout to fetch code
-      security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
-      actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
-    runs-on: ubuntu-latest
-    name: njsscan code scanning
-    steps:
-    - name: Checkout the code
-      uses: actions/checkout@v3
-    - name: nodejsscan scan
-      id: njsscan
-      uses: ajinabraham/njsscan-action@7237412fdd36af517e2745077cedbf9d6900d711
-      with:
-        args: '. --sarif --output results.sarif || true'
-    - name: Upload njsscan report
-      uses: github/codeql-action/upload-sarif@v2
-      with:
-        sarif_file: results.sarif
-        
   build:
-    # The type of runner that the job will run on
+    # The type of runner that the job will run on 
     runs-on: ubuntu-latest
     permissions:
       contents: 'read'
@@ -53,17 +33,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
-       
-          
-      #BEGIN - Docker authntication and build
-      - name: Docker Auth
-        id: docker-auth
-        uses: 'docker/login-action@v2'
-        with:
-          username: 'oauth2accesstoken'
-          password: '${{ steps.auth.outputs.access_token }}'
-          registry: '${{ env.GAR_LOCATION }}-docker.pkg.dev'
           
       #Build the docker image and push the image to Google Artifactory Registry
       - name: Build and Push Container
