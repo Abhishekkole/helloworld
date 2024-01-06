@@ -14,9 +14,10 @@
 
 To configure this CI/CD workflow:
  1. Ensure the required Google Cloud APIs are enabled:
+ #
     Cloud Run:run.googleapis.com
+#
     Artifact Registry:artifactregistry.googleapis.com
-
  2. Generate the JSON key for GCP Service account.
  3. Ensure the required IAM permissions are granted
     Storage
@@ -24,8 +25,10 @@ To configure this CI/CD workflow:
    Cloud Run
       roles/run.admin
       roles/iam.serviceAccountUser     (to act as the Cloud Run runtime service account)
+#
    Artifact Registry
       roles/artifactregistry.admin     (project or repository level)
+#
    NOTE:Follow the principle of least privilege when assigning IAM roles to Service Account.
  4. Create GitHub secrets for GCP_CREDENTIALS and store your Service Account Key JSON value in it .
 
